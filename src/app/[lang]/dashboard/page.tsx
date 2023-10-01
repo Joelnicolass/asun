@@ -1,7 +1,7 @@
 import { Locale } from "@/i18n.config"
 import { getDictionary } from "@/lib/dictionary"
 
-export const page = async ({
+export const Dashboard = async ({
   params: { lang }
 }: {
   params: { lang: Locale }
@@ -12,4 +12,4 @@ export const page = async ({
   )
 }
 
-export default page
+export default Dashboard
