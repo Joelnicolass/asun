@@ -1,6 +1,7 @@
 import { Locale } from '@/i18n.config';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+// import videobg from '../../../public/assets/';
 import Header from './components/header';
 import './globals.css';
 
@@ -21,6 +22,19 @@ export default function RootLayout({
   return (
     <html lang={params.lang}>
       <body className={inter.className}>
+        <video autoPlay loop muted             style={{
+              objectFit: 'cover',
+              width: '100vw',
+              height: '100vh',
+              position: 'fixed',
+              zIndex: -1,
+            }}>
+          <source
+            src='/video.mp4'
+            type='video/mp4'
+
+          />
+        </video>
         <Header lang={params.lang}></Header>
         <main>{children}</main>
       </body>
