@@ -1,0 +1,25 @@
+{
+    "navigation": {
+      "home": "Home",
+      "about": "About"
+    },
+    "page": {
+      "home": {
+        "title": "Welcome to NextJs i18n",
+        "description": "Internationalization in NextJs 13 App router"
+      },
+      "about": {
+        "title": "Welcome to About Us",
+        "description": "This is the about page"
+      },
+      "contact": {
+        "title": "Welcome to Contact",
+        "description": "This is the contact"
+      },
+      "customers": {
+        "title": "Welcome to Customers",
+        "description": "This is the Customers"
+      
+      }
+    }
+  }

@@ -1,0 +1,25 @@
+{
+    "navigation": {
+      "home": "Inicio",
+      "about": "Acerca de"
+    },
+    "page": {
+      "home": {
+        "title": "Bienvenido a NextJs i18n",
+        "description": "Internacionalización en NextJs 13 App router"
+      },
+      "about": {
+        "title": "Bienvenido a Nosotros",
+        "description": "Esta es la página de Nosotros"
+      },
+      "contact": {
+        "title": "Bienvenido a Contacto",
+        "description": "Esta es la página de contacto"
+      },
+      "customers": {
+        "title": "Bienvenido a Clientes",
+        "description": "Esta es la página de Clientes"
+      
+      }
+    }
+  }
