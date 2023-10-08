@@ -4,7 +4,7 @@ import React from 'react';
 export const useMediaQuery = (width: number)=> {
   const [targetReached, setTargetReached] = React.useState(false);
 
-  const updateTarget = React.useCallback((e) => {
+  const updateTarget = React.useCallback((e: MediaQueryListEvent) => {
     if (e.matches) {
       setTargetReached(true);
     } else {
