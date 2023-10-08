@@ -5,7 +5,8 @@
     },
     "page": {
       "home": {
-        "title": "Welcome to NextJs i18n",
+        "title": "We are a prominent company in the timber industry, focused on the production and international export of high-quality products.",
+        "title_button": "About us",
         "description": "Internationalization in NextJs 13 App router"
       },
       "about": {

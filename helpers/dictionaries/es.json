@@ -5,8 +5,9 @@
     },
     "page": {
       "home": {
-        "title": "Bienvenido a NextJs i18n",
-        "description": "Internacionalización en NextJs 13 App router"
+        "title": "Somos una destacada empresa en la industria maderera, enfocada en la producción y exportación de productos de alta calidad de manera internacional.",
+        "title_button": "Conócenos",
+        "description":  "Nuestra misión es responder en forma eficaz a los desafíos que presente el comercio internacional. Una dinámica estructura de negocios permite a ASUN destacar en el desarrollo y apertura de nuevos mercados."
       },
       "about": {
         "title": "Bienvenido a Nosotros",
