@@ -1,6 +1,5 @@
 "use client"
 import { useMediaQuery } from "../../_hooks/useMediaQuery"
-import './style.css'
 const Background = () => {
     const isSM = useMediaQuery(640)
   return (
