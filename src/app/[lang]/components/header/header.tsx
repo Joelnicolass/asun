@@ -24,17 +24,17 @@ export default function Header({ navigation, lang }: { navigation: {home: string
     isMenuOpen={isMenuOpen}
     onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
-        <NavbarMenuToggle
-          aria-label={"Close menu" }
-          className="sm:hidden"
-        />
         <NavbarBrand>
           <AsunLogo />
           <p className="font-bold text-inherit">ASUN</p>
         </NavbarBrand>
+        <NavbarMenuToggle
+          aria-label={"Close menu" }
+          className="sm:hidden"
+        />
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="hidden sm:flex sm:gap-4" justify="center">
         <NavbarItem isActive= {currentRoute == `/${lang}/dashboard` ? true : false}>
           <Link color="foreground" href={`/${lang}/dashboard`}>
             Dashboard
@@ -55,8 +55,8 @@ export default function Header({ navigation, lang }: { navigation: {home: string
            Contact
           </Link>
         </NavbarItem>
-      </NavbarContent>
         <LocaleSwitcher/>
+      </NavbarContent>
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>

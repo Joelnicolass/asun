@@ -6,6 +6,7 @@ import React from 'react';
 // import videobg from '../../../public/assets/';
 import { getDictionary } from '@/lib/dictionary';
 import { RootLayoutProvider } from './RootLayoutProvider.component';
+import Background from './components/background/background';
 import Header from './components/header/header';
 import './globals.css';
 
@@ -28,21 +29,8 @@ export default async function RootLayout({
   return (
     <html lang={params.lang}>
         <body className={inter.className}>
+          <Background/>
       <RootLayoutProvider>
-          <video
-            autoPlay
-            loop
-            muted
-            style={{
-              objectFit: 'cover',
-              width: '100vw',
-              height: '100vh',
-              position: 'fixed',
-              zIndex: -1,
-            }}
-          >
-            <source src='/video.mp4' type='video/mp4' />
-          </video>
           <Header navigation={navigation} lang={params.lang}></Header>
           <main>{children}</main>
         </RootLayoutProvider>
