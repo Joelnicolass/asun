@@ -28,9 +28,9 @@ export default async function RootLayout({
   const { navigation } = await getDictionary(params.lang)
   return (
     <html lang={params.lang}>
-        <body className={inter.className}>
+        <body className={inter.className} suppressHydrationWarning={true}>
           <Background/>
-      <RootLayoutProvider>
+          <RootLayoutProvider>
           <Header navigation={navigation} lang={params.lang}></Header>
           <main>{children}</main>
         </RootLayoutProvider>
