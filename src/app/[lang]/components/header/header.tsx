@@ -1,93 +1,84 @@
+'use client';
 
-"use client"
-
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from "@nextui-org/navbar";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenu,
+  NavbarMenuItem,
+  NavbarMenuToggle,
+} from '@nextui-org/navbar';
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from "react";
-import { AsunLogo } from "../asun_logo/asun_logo";
-import LocaleSwitcher from "../locale_switcher.tsx/locale_switcher";
-
-export default function Header({ navigation, lang }: { navigation: {home: string; about: string;}, lang: string }) {
-     const [isMenuOpen, setIsMenuOpen] = useState(false);
-     const currentRoute = usePathname();
-  const menuItems = [
-    "Dashboard",
-    "Customers",
-    "About us",
-    "Contact",
-  ];
+import { useState } from 'react';
+import { useMediaQuery } from '../../_hooks/useMediaQuery';
+import { AsunLogo } from '../asun_logo/asun_logo';
+import LocaleSwitcher from '../locale_switcher.tsx/locale_switcher';
+interface Navigation {
+  routeName: string;
+  route: string;
+}
+export default function Header({
+  navigation,
+  lang,
+}: {
+  navigation: Navigation[];
+  lang: string;
+}) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isSM = useMediaQuery(646);
+  const currentRoute = usePathname();
 
   return (
     <Navbar
-    isMenuOpen={isMenuOpen}
-    onMenuOpenChange={setIsMenuOpen}>
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
+      className='px-0 mx-auto w-view'
+    >
       <NavbarContent>
         <NavbarBrand>
           <AsunLogo />
-          <p className="font-bold text-inherit">ASUN</p>
+          <p className='font-bold text-inherit'>ASUN</p>
         </NavbarBrand>
-        <NavbarMenuToggle
-          aria-label={"Close menu" }
-          className="sm:hidden"
-        />
+        <NavbarMenuToggle aria-label={'Close menu'} className='sm:hidden' />
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex sm:gap-4" justify="center">
-        <NavbarItem isActive= {currentRoute == `/${lang}/dashboard` ? true : false}>
-          <Link color="foreground" href={`/${lang}/dashboard`}>
-            Dashboard
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive= {currentRoute == `/${lang}/customers` ? true : false}>
-          <Link href={`/${lang}/customers`} aria-current="page">
-            Customers
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive= {currentRoute == `/${lang}/about-us` ? true : false}>
-          <Link color="foreground" href={`/${lang}/about-us`}>
-          About us
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive= {currentRoute == `/${lang}/contact` ? true : false}>
-          <Link color="foreground" href={`/${lang}/contact`}>
-           Contact
-          </Link>
-        </NavbarItem>
-        <LocaleSwitcher/>
+      <NavbarContent className='hidden sm:flex sm:gap-4' justify='center'>
+        {navigation.map((item) => (
+          <NavbarItem
+            key={item.route}
+            isActive={currentRoute == `/${lang}/${item.route}` ? true : false}
+          >
+            <Link
+              color='foreground'
+              href={`/${lang}/${item.route}`}
+              className='text-small sm:text-medium'
+            >
+              {item.routeName}
+            </Link>
+          </NavbarItem>
+        ))}
       </NavbarContent>
-      <NavbarMenu>
-        {menuItems.map((item, index) => (
+
+      {!isSM && <LocaleSwitcher side='end' />}
+      <NavbarMenu className='scrollbar-hide'>
+        {navigation.map((item, index: number) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
-              color={
-                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-              }
-              className="w-full"
-              href={`/${lang}/${item.split(' ').join('-').toLowerCase()}`}
+              color='foreground'
+              className='w-full'
+              href={`/${lang}/${item.route}`}
             >
-              {item}
+              {item.routeName}
             </Link>
           </NavbarMenuItem>
         ))}
+        <div>
+          <LocaleSwitcher side='start' />
+        </div>
       </NavbarMenu>
     </Navbar>
-  )
+  );
 }
-    // <header className='py-6 absolute top-0 bg-opacity-20 bg-neutral-950 w-full'>
-    //   <nav className='flex items-center justify-between px-5'>
-    //     <ul className='flex gap-x-8'>
-    //       <li className='text-white border-b-2 border-b-transparent hover:border-b-white transition-all'>
-    //         <Link href={`/${lang}`}>{navigation.home}</Link>
-    //       </li>
-    //       <li className='text-white border-b-2 border-b-transparent hover:border-b-white transition-all'>
-    //         <Link href={`/${lang}/dashboard`}>{navigation.about}</Link>
-    //       </li>
-    //     </ul>
-    //     <LocaleSwitcher />
-    //   </nav>
-    // </header>
-
-
-
