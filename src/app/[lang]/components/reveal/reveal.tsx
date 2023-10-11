@@ -51,9 +51,11 @@ export const Reveal = ({
           bottom: 4,
           left: 0,
           right: 0,
-          background: 'var(--brand)',
+          background: '#CCC',
+          opacity: 0.1 ,
           zIndex: 20,
         }}
+        className='blur-sm'
         variants={{
           hidden: { left: 0 },
           visible: { left: '100%' },
