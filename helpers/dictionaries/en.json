@@ -1,26 +1,29 @@
+
 {
-    "navigation": {
-      "home": "Home",
-      "about": "About"
+  "navigation": [
+    { "routeName": "Dashboard", "route": "dashboard" },
+    { "routeName": "About Us", "route": "about-us" },
+    { "routeName": "Products", "route": "products" },
+    { "routeName": "Customers", "route": "customers" },
+    { "routeName": "Contact", "route": "Contact" }
+  ],
+  "page": {
+    "dashboard": {
+      "title": "We are a prominent company in the timber industry, focused on the production and international export of high-quality products.",
+      "title_button": "About us",
+      "description": "Internationalization in NextJs 13 App router"
     },
-    "page": {
-      "home": {
-        "title": "We are a prominent company in the timber industry, focused on the production and international export of high-quality products.",
-        "title_button": "About us",
-        "description": "Internationalization in NextJs 13 App router"
-      },
-      "about": {
-        "title": "Welcome to About Us",
-        "description": "This is the about page"
-      },
-      "contact": {
-        "title": "Welcome to Contact",
-        "description": "This is the contact"
-      },
-      "customers": {
-        "title": "Welcome to Customers",
-        "description": "This is the Customers"
-      
-      }
+    "about": {
+      "title": "Welcome to About Us",
+      "description": "This is the about page"
+    },
+    "contact": {
+      "title": "Welcome to Contact",
+      "description": "This is the contact"
+    },
+    "customers": {
+      "title": "Welcome to Customers",
+      "description": "This is the Customers"
     }
   }
+}
