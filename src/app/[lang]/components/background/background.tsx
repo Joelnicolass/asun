@@ -1,9 +1,12 @@
 "use client"
-import { useMediaQuery } from "../../_hooks/useMediaQuery"
+import { usePathname } from "next/navigation";
+import { useMediaQuery } from "../../_hooks/useMediaQuery";
 const Background = () => {
     const isSM = useMediaQuery(640)
+    const currentRoute = usePathname();
   return (
     isSM ?       <></> :
+    currentRoute.includes('products') ?<></>:
     <video
     autoPlay
     loop

@@ -7,7 +7,11 @@ import { usePathname } from 'next/navigation';
 
 import { i18n } from '@/i18n.config';
 
-export default function LocaleSwitcher() {
+interface LocaleSwitcherProps {
+  side: 'start' | 'end',
+}
+
+export default function LocaleSwitcher({side}: LocaleSwitcherProps) {
   const pathName = usePathname()
 
   const redirectedPathName = (locale: string) => {
@@ -18,10 +22,10 @@ export default function LocaleSwitcher() {
   }
 
   return (
-    <NavbarContent justify="end">
+    <NavbarContent justify={side}>
       {i18n.locales.map(locale => {
         return (
-          <NavbarItem key={locale} className="hidden lg:flex hover:opacity-75" isActive={pathName.split('/')[1] == locale ? true : false} >
+          <NavbarItem key={locale} className="flex hover:opacity-75  data-[active=true]:text-[--brand]" isActive={pathName.split('/')[1] == locale ? true : false} >
             <Link
               color='foreground'
               href={redirectedPathName(locale)}
