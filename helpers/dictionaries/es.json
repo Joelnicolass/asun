@@ -1,0 +1,29 @@
+{
+    "navigation": [
+      { "routeName": "Dashboard", "route": "dashboard" },
+      { "routeName": "Nosotros", "route": "about-us" },
+      { "routeName": "Products", "route": "products" },
+      { "routeName": "Clientes", "route": "customers" },
+      { "routeName": "Cóntacto", "route": "Contact" }
+    ],
+    "page": {
+      "dashboard": {
+        "title": "Somos una destacada empresa en la industria maderera, enfocada en la producción y exportación de productos de alta calidad de manera internacional.",
+        "title_button": "Conócenos",
+        "description":  "Nuestra misión es responder en forma eficaz a los desafíos que presente el comercio internacional. Una dinámica estructura de negocios permite a ASUN destacar en el desarrollo y apertura de nuevos mercados."
+      },
+      "about": {
+        "title": "Bienvenido a Nosotros",
+        "description": "Esta es la página de Nosotros"
+      },
+      "contact": {
+        "title": "Bienvenido a Contacto",
+        "description": "Esta es la página de contacto"
+      },
+      "customers": {
+        "title": "Bienvenido a Clientes",
+        "description": "Esta es la página de Clientes"
+      
+      }
+    }
+  }
